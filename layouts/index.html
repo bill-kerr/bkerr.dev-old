@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- prettier-ignore -->
+    {{ $css := resources.Get "/css/styles.css" }}
+    {{ $css = $css | resources.PostCSS }}
+    {{ $css = $css | minify | resources.PostProcess }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" />
+  </head>
+  <body class="antialiased text-gray-900">
+    {{ $css.RelPermalink }}
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "bkerr.dev",
+  "author": "Bill Kerr",
+  "description": "Personal portfolio website for Bill Kerr",
+  "scripts": {
+    "dev": "hugo server",
+    "deploy": "set NODE_ENV=production && hugo --gc --minify"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^8.2.0",
+    "postcss-cli": "^8.3.0",
+    "tailwindcss": "^2.0.1"
+  }
+}
