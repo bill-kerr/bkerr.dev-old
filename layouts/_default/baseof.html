@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- prettier-ignore -->
+  {{ partial "head.html" . }}
+</html>
+<body class="antialiased text-gray-900 bg-gray-50 font-display">
+  <div class="max-w-screen-lg mx-auto p-6 flex flex-col lg:flex-row">
+    {{ partial "sidebar.html" . }}
+    <div>
+      <!-- prettier-ignore -->
+      {{ partial "nav.html" . }}
+      <div class="mt-8">{{ block "main" . }} {{ end }}</div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 inset-x-0">test</div>
+</body>

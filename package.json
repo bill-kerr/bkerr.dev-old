@@ -3,7 +3,7 @@
   "author": "Bill Kerr",
   "description": "Personal portfolio website for Bill Kerr",
   "scripts": {
-    "dev": "hugo server",
+    "dev": "hugo server --disableFastRender",
     "deploy": "set NODE_ENV=production && hugo --gc --minify"
   },
   "dependencies": {
@@ -11,5 +11,6 @@
     "postcss": "^8.2.0",
     "postcss-cli": "^8.3.0",
     "tailwindcss": "^2.0.1"
-  }
+  },
+  "devDependencies": {}
 }

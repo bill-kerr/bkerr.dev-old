@@ -1,0 +1,22 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ .Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}</title>
+
+  <!-- prettier-ignore -->
+  {{ $css := resources.Get "/css/styles.css" | resources.PostCSS }}
+  {{ if hugo.IsProduction }}
+  {{ $css = $css | minify | resources.PostProcess }}
+  {{ end }}
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" />
+  <script
+    src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js"
+    defer
+  ></script>
+</head>
