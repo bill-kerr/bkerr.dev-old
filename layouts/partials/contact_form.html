@@ -1,0 +1,39 @@
+<form
+  class="relative mt-4"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="secret-field"
+  name="contact"
+  action="/contact"
+>
+  <div class="absolute inset-0 transform -rotate-3 bg-blue-200 rounded-lg"></div>
+  <div class="relative p-6 rounded-lg shadow text-gray-700 bg-gray-50">
+    <h2 class="text-2xl font-black">Send Me a Message</h2>
+    <div class="hidden">
+      <label for="secret-field">fill this out</label>
+      <input type="text" name="secret-field" />
+    </div>
+    <div class="mt-4 flex items-center">
+      <div class="w-1/2">
+        <label for="name" class="block text-sm text-gray-600 font-bold">Name</label>
+        <input type="text" name="name" id="name" class="w-full form-field" />
+      </div>
+      <div class="ml-4 w-1/2">
+        <label for="email" class="block text-sm text-gray-600 font-bold">Email</label>
+        <input type="text" name="email" id="email" class="w-full form-field" />
+      </div>
+    </div>
+    <div class="mt-2">
+      <label for="message" class="text-sm text-gray-600 font-bold">Message</label>
+      <textarea rows="8" cols="80" name="message" id="message" class="w-full form-field"></textarea>
+    </div>
+    <div class="flex justify-end">
+      <button
+        type="submit"
+        class="mt-4 px-6 py-3 bg-blue-700 text-white font-bold rounded-lg transition-colors hover:bg-blue-600 focus:ring focus:outline-none"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</form>
