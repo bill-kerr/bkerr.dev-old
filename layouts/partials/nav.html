@@ -1,13 +1,14 @@
 <!-- prettier-ignore -->
 {{ $curPage := .Page.Params.Name }}
-{{ $active := "pl-1 pr-2 shadow-blue-200 hover:shadow-blue-200 text-gray-900" }}
-{{ $inactive := "pl-1 pr-2 hover:shadow-blue-100" }}
+{{ $base := "pl-1 pr-2" }}
+{{ $active := print $base " shadow-blue-200 hover:shadow-blue-200 text-gray-900" }}
+{{ $inactive := print $base " hover:shadow-blue-100" }}
 {{ $about := $inactive }}
 {{ $blog := $inactive }}
 {{ $projects := $inactive }}
 {{ $resume := $inactive }}
 {{ $contact := $inactive }}
-{{ if eq $curPage "about" }}
+{{ if .IsHome }}
 {{ $about = $active }}
 {{ else if (eq $curPage "blog") }}
 {{ $blog = $active }}
@@ -21,7 +22,7 @@
 
 <ul class="flex items-center space-x-5 text-sm text-gray-600 uppercase">
   <li>
-    <a href="/about" class="{{ $about }}">About Me</a>
+    <a href="/" class="{{ $about }}">About Me</a>
   </li>
   <li>
     <a href="/blog" class="{{ $blog }}">Blog</a>

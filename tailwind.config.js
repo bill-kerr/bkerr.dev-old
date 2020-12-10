@@ -28,11 +28,15 @@ module.exports = {
       backgroundImage: {
         wave: 'url(/img/wave.svg)',
       },
+      textColor: {
+        github: '#212121',
+        linkedin: '#0077b7',
+      },
     },
   },
   variants: {
     extend: {
-      ringColor: ['group-hover'],
+      ringColor: ['group-hover', 'focus-visible'],
       transitionProperty: ['group-hover'],
       transitionDuration: ['group-hover'],
     },

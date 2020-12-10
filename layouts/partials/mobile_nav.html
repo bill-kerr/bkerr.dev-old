@@ -7,7 +7,7 @@
 {{ $projects := $inactive }}
 {{ $resume := $inactive }}
 {{ $contact := $inactive }}
-{{ if eq $curPage "about" }}
+{{ if .IsHome }}
 {{ $about = $active }}
 {{ else if (eq $curPage "blog") }}
 {{ $blog = $active }}
@@ -19,7 +19,7 @@
 {{ $contact = $active }}
 {{ end }}
 
-<div class="p-6 fixed inset-0 bg-gray-50 z-50" x-show="menuOpen" x-cloak>
+<div class="p-6 fixed inset-0 bg-gray-50 z-50" x-show.transition.opacity="menuOpen" x-cloak>
   <div class="flex items-start justify-between">
     <div class="flex items-center">
       <a href="/" class="block flex-shrink-0 w-12 group">
@@ -43,13 +43,23 @@
       {{ partial "icon_x.html" (dict "class" "h-7 w-7 text-gray-600 group-hover:text-gray-700 transition-colors")}}
     </button>
   </div>
-  <ul class="mt-12 flex flex-col space-y-4 text-gray-700">
-    <a href="/about" class="{{ $about }}">About Me</a>
+  <div class="mt-12 flex flex-col space-y-4 text-gray-700">
+    <a href="/" class="{{ $about }}">About Me</a>
     <a href="/blog" class="{{ $blog }}">Blog</a>
     <a href="/projects" class="{{ $projects }}">Projects</a>
     <a href="/resume" class="{{ $resume }}">Resume</a>
     <a href="/contact" class="{{ $contact }}">Contact</a>
-  </ul>
+  </div>
+  <div class="ml-4 mt-16 flex items-center">
+    <a href="https://github.com/bk7987">
+      <!-- prettier-ignore -->
+      {{ partial "icon_github" (dict "class" "h-6 w-6 text-gray-400 hover:text-github transition-colors") }}
+    </a>
+    <a href="https://github.com/bk7987" class="ml-3">
+      <!-- prettier-ignore -->
+      {{ partial "icon_linkedin" (dict "class" "h-6 w-6 text-gray-400 hover:text-linkedin transition-colors") }}
+    </a>
+  </div>
   <div class="absolute bottom-2 right-2">
     <img src="/img/square_pattern.svg" alt="pattern" class="h-56 transform rotate-180" />
   </div>

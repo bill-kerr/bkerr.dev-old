@@ -10,6 +10,16 @@
     <div class="ml-4 lg:ml-0 lg:mt-4 flex flex-col">
       <span class="font-black text-2xl">Bill Kerr</span>
       <span class="text-gray-600">Software Developer</span>
+      <div class="hidden mt-1 lg:flex items-center">
+        <a href="https://github.com/bk7987">
+          <!-- prettier-ignore -->
+          {{ partial "icon_github" (dict "class" "h-5 w-5 text-gray-400 hover:text-github transition-colors") }}
+        </a>
+        <a href="https://github.com/bk7987" class="ml-2">
+          <!-- prettier-ignore -->
+          {{ partial "icon_linkedin" (dict "class" "h-5 w-5 text-gray-400 hover:text-linkedin transition-colors") }}
+        </a>
+      </div>
     </div>
   </div>
   <button
