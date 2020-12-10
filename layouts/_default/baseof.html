@@ -5,12 +5,17 @@
 </html>
 <body
   class="min-h-screen antialiased text-gray-900 bg-gray-50 font-display bg-wave bg-no-repeat bg-bottom"
+  x-data="{menuOpen: false}"
+  x-bind:class="{'overflow-hidden': menuOpen}"
 >
+  <div>{{ partial "mobile_nav.html" }}</div>
   <div class="max-w-screen-lg mx-auto p-6 pb-12 flex flex-col lg:flex-row">
     {{ partial "sidebar.html" . }}
-    <div class="ml-12 w-full">
+    <div class="lg:ml-12 w-full">
       <!-- prettier-ignore -->
-      {{ partial "nav.html" . }}
+      <div class="hidden lg:block">
+        {{ partial "nav.html" . }}
+      </div>
       <div class="mt-12">{{ block "main" . }} {{ end }}</div>
     </div>
   </div>

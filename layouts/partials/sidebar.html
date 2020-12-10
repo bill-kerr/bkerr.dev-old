@@ -1,13 +1,23 @@
-<div>
-  <a href="/" class="block w-32 group">
-    <img
-      src="/img/profile_photo.jpg"
-      alt="Bill Kerr"
-      class="rounded-full ring-4 ring-gray-300 group-hover:ring-blue-200"
-    />
-  </a>
-  <div class="mt-4 flex flex-col">
-    <span class="font-black text-2xl">Bill Kerr</span>
-    <span class="text-gray-600">Software Developer</span>
+<div class="flex items-start justify-between lg:block lg:w-52">
+  <div class="flex items-center lg:flex-col">
+    <a href="/" class="block flex-shrink-0 w-12 lg:w-32 group">
+      <img
+        src="/img/profile_photo.jpg"
+        alt="Bill Kerr"
+        class="rounded-full ring-4 ring-gray-300 group-hover:ring-blue-200"
+      />
+    </a>
+    <div class="ml-4 lg:ml-0 lg:mt-4 flex flex-col">
+      <span class="font-black text-2xl">Bill Kerr</span>
+      <span class="text-gray-600">Software Developer</span>
+    </div>
   </div>
+  <button
+    class="p-1 lg:hidden focus:ring focus:outline-none group"
+    @click="menuOpen = !menuOpen"
+    x-show="!menuOpen"
+  >
+    <!-- prettier-ignore -->
+    {{ partial "icon_menu.html" (dict "class" "h-7 w-7 text-gray-600 group-hover:text-gray-700 transition-colors")}}
+  </button>
 </div>
