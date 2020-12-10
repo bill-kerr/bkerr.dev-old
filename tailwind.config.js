@@ -1,4 +1,5 @@
 const production = process.env.HUGO_ENVIRONMENT === 'production';
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: {
@@ -10,6 +11,13 @@ module.exports = {
     fontFamily: {
       display: ['Nunito Sans', 'sans-serif'],
     },
+    colors: {
+      white: colors.white,
+      black: colors.black,
+      gray: colors.gray,
+      blue: colors.blue,
+      lblue: colors.lightBlue,
+    },
     extend: {
       boxShadow: {
         'blue-200':
@@ -19,6 +27,9 @@ module.exports = {
       },
       backgroundImage: {
         wave: 'url(/img/wave.svg)',
+      },
+      margin: {
+        2.25: '0.5625rem',
       },
     },
   },

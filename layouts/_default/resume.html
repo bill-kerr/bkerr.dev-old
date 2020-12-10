@@ -1,3 +1,150 @@
 {{ define "main" }}
-<div>this is the resume page</div>
+
+<div class="p-6 bg-white shadow-lg rounded-lg text-gray-700 space-y-12">
+  <div class="flex justify-between items-center">
+    <div>
+      <h2 class="text-5xl font-black">Bill Kerr</h2>
+      <p>Software Developer</p>
+    </div>
+    <div class="text-right">
+      <p>4427 Walnut St, Apt 2, Philadelphia, PA 19104</p>
+      <p>(215) 514-3619</p>
+      <p>
+        <a href="mailto:bk7987@gmail.com" class="shadow-blue-100 hover:shadow-blue-200"
+          >bk7987@gmail.com</a
+        >
+      </p>
+      <p>
+        <a href="https://github.com/bk7987" class="shadow-blue-100 hover:shadow-blue-200"
+          >github.com/bk7987</a
+        >
+      </p>
+    </div>
+  </div>
+
+  <!-- === SKILLZ === -->
+  <section>
+    {{ partial "resume_header.html" (dict "title" "Technical Skills") }}
+    <div class="mt-4 space-x-2 flex justify-between">
+      <div>
+        <div class="inline-block py-1 px-3 bg-blue-100 rounded-full text-sm text-blue-500">
+          Backend Technologies
+        </div>
+        <ul class="mt-1 space-y-1">
+          <!-- prettier-ignore -->
+          {{ partial "resume_li.html" (dict "content" "NodeJS, Django, GoFiber") }}
+          {{ partial "resume_li.html" (dict "content" "REST API design/consumption") }}
+          {{ partial "resume_li.html" (dict "content" "Docker, Kubernetes, Traefik, Nginx") }}
+          {{ partial "resume_li.html" (dict "content" "NATS Streaming Server") }}
+          {{ partial "resume_li.html" (dict "content" "PostgreSQL, MySQL, MongoDB") }}
+        </ul>
+      </div>
+      <div>
+        <div class="inline-block py-1 px-3 bg-blue-100 rounded-full text-sm text-blue-500">
+          Frontend Frameworks/Tools
+        </div>
+        <ul class="mt-1 space-y-1">
+          <!-- prettier-ignore -->
+          {{ partial "resume_li.html" (dict "content" "React, Svelte, AlpineJS") }}
+          {{ partial "resume_li.html" (dict "content" "Redux, Formik, TailwindCSS") }}
+        </ul>
+        <div class="mt-3 inline-block py-1 px-3 bg-blue-100 rounded-full text-sm text-blue-500">
+          Web Services
+        </div>
+        <ul class="mt-1 space-y-1">
+          <!-- prettier-ignore -->
+          {{ partial "resume_li.html" (dict "content" "AWS, Heroku, DigitalOcean") }}
+          {{ partial "resume_li.html" (dict "content" "Netlify, Firebase, Cloudinary") }}
+        </ul>
+      </div>
+      <div>
+        <div class="inline-block py-1 px-3 bg-blue-100 rounded-full text-sm text-blue-500">
+          Languages/Source Control/CI
+        </div>
+        <ul class="mt-1 space-y-1">
+          <!-- prettier-ignore -->
+          {{ partial "resume_li.html" (dict "content" "NodeJS, Django, GoFiber") }}
+            {{ partial "resume_li.html" (dict "content" "REST API design/consumption") }}
+            {{ partial "resume_li.html" (dict "content" "Docker, Kubernetes, Traefik, Nginx") }}
+            {{ partial "resume_li.html" (dict "content" "NATS Streaming Server") }}
+            {{ partial "resume_li.html" (dict "content" "PostgreSQL, MySQL, MongoDB") }}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- === EDUCATION === -->
+  <section>
+    {{ partial "resume_header.html" (dict "title" "Education") }}
+    <div class="mt-4 flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="https://drexel.edu">
+          <img src="/img/drexel_logo.png" alt="Drexel University" class="h-10" />
+        </a>
+        <div class="ml-4">
+          <p class="text-lg font-bold">Drexel University</p>
+          <p class="text-gray-600 text-sm">
+            Bachelor of Science in Civil Engineering ● 3.7 GPA (Magna Cum Laude)
+          </p>
+        </div>
+      </div>
+      <div class="text-right">
+        <p>Philadelphia, PA</p>
+        <p class="text-gray-600 text-sm">June 2017</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- === WORK EXPERIENCE === -->
+  <section>
+    {{ partial "resume_header.html" (dict "title" "Work Experience") }}
+    <div class="mt-4 flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="https://jjaconstruction.com">
+          <img
+            src="/img/jja_logo.svg"
+            alt="James J. Anderson Construction Co., Inc."
+            class="h-10"
+          />
+        </a>
+        <div class="ml-4">
+          <p class="text-lg font-bold">James J. Anderson Construction Co., Inc.</p>
+          <p class="text-gray-600 text-sm">Project Engineer</p>
+        </div>
+      </div>
+      <div class="text-right">
+        <p>Philadelphia, PA</p>
+        <p class="text-gray-600 text-sm">June 2017 - Present</p>
+      </div>
+    </div>
+    <div class="mt-2 ml-8">
+      <ul>
+        <!-- prettier-ignore-->
+        {{ partial "resume_li.html" (dict "content" "Design, develop, and deploy custom software solutions to streamline existing processes and improve accessibility of project data.") }}
+        {{ partial "resume_li.html" (dict "content" "Implement and troubleshoot 3D machine control technology for grading and paving operations.") }}
+        {{ partial "resume_li.html" (dict "content" "Collaborate with project team members to plan, schedule, and execute project objectives.") }}
+        {{ partial "resume_li.html" (dict "content" "Generate extensive job cost analyses, including projections of future work and cost-to-date breakdowns.") }}
+        {{ partial "resume_li.html" (dict "content" "Developed & deployed company website using HUGO, TailwindCSS, AlpineJS, and Netlify.") }}
+      </ul>
+    </div>
+  </section>
+
+  <!-- === PROJECT EXPERIENCE === -->
+  <section>
+    {{ partial "resume_header.html" (dict "title" "Project Experience") }}
+    <div>test</div>
+  </section>
+</div>
+<div
+  class="mt-24 p-4 flex items-center justify-between rounded-lg shadow-lg bg-blue-500 text-gray-100"
+>
+  <span class="text-lg">Download a PDF version of my resume here</span>
+  <button
+    class="px-6 py-3 flex items-center font-bold bg-white shadow rounded-lg hover:bg-gray-50 transition-colors"
+  >
+    {{ partial "icon_download.html" (dict "class" "h-6 w-6 text-gray-600")}}
+    <span class="ml-2 text-gray-700">Download</span>
+  </button>
+</div>
+
 {{end }}
