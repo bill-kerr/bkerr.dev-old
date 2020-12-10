@@ -1,6 +1,17 @@
 {{ define "main" }}
 
-<div class="p-6 bg-white shadow-lg rounded-lg text-gray-700 space-y-12">
+<div class="flex justify-end">
+  <a
+    href="/docs/bill_kerr_resume.pdf"
+    class="ml-auto px-6 py-3 flex items-center font-bold bg-blue-500 hover:bg-blue-600 transition-colors text-white shadow rounded-lg focus:ring focus:outline-none"
+    download
+  >
+    {{ partial "icon_download.html" (dict "class" "h-6 w-6")}}
+    <span class="ml-2">Download resume as PDF</span>
+  </a>
+</div>
+
+<div class="mt-6 p-6 bg-white shadow-lg rounded-lg text-gray-700 space-y-12">
   <div class="flex justify-between items-center">
     <div>
       <h2 class="text-5xl font-black">Bill Kerr</h2>
@@ -23,7 +34,7 @@
   </div>
 
   <!-- === SKILLZ === -->
-  <section>
+  <section class="mt-6">
     {{ partial "resume_header.html" (dict "title" "Technical Skills") }}
     <div class="mt-4 space-x-2 flex justify-between">
       <div>
@@ -64,17 +75,17 @@
         <ul class="mt-1 space-y-1">
           <!-- prettier-ignore -->
           {{ partial "resume_li.html" (dict "content" "NodeJS, Django, GoFiber") }}
-            {{ partial "resume_li.html" (dict "content" "REST API design/consumption") }}
-            {{ partial "resume_li.html" (dict "content" "Docker, Kubernetes, Traefik, Nginx") }}
-            {{ partial "resume_li.html" (dict "content" "NATS Streaming Server") }}
-            {{ partial "resume_li.html" (dict "content" "PostgreSQL, MySQL, MongoDB") }}
+          {{ partial "resume_li.html" (dict "content" "REST API design/consumption") }}
+          {{ partial "resume_li.html" (dict "content" "Docker, Kubernetes, Traefik, Nginx") }}
+          {{ partial "resume_li.html" (dict "content" "NATS Streaming Server") }}
+          {{ partial "resume_li.html" (dict "content" "PostgreSQL, MySQL, MongoDB") }}
         </ul>
       </div>
     </div>
   </section>
 
   <!-- === EDUCATION === -->
-  <section>
+  <section class="mt-6">
     {{ partial "resume_header.html" (dict "title" "Education") }}
     <div class="mt-4 flex items-center justify-between">
       <div class="flex items-center">
@@ -96,7 +107,7 @@
   </section>
 
   <!-- === WORK EXPERIENCE === -->
-  <section>
+  <section class="mt-6">
     {{ partial "resume_header.html" (dict "title" "Work Experience") }}
     <div class="mt-4 flex items-center justify-between">
       <div class="flex items-center">
@@ -117,34 +128,80 @@
         <p class="text-gray-600 text-sm">June 2017 - Present</p>
       </div>
     </div>
-    <div class="mt-2 ml-8">
-      <ul>
-        <!-- prettier-ignore-->
-        {{ partial "resume_li.html" (dict "content" "Design, develop, and deploy custom software solutions to streamline existing processes and improve accessibility of project data.") }}
-        {{ partial "resume_li.html" (dict "content" "Implement and troubleshoot 3D machine control technology for grading and paving operations.") }}
-        {{ partial "resume_li.html" (dict "content" "Collaborate with project team members to plan, schedule, and execute project objectives.") }}
-        {{ partial "resume_li.html" (dict "content" "Generate extensive job cost analyses, including projections of future work and cost-to-date breakdowns.") }}
-        {{ partial "resume_li.html" (dict "content" "Developed & deployed company website using HUGO, TailwindCSS, AlpineJS, and Netlify.") }}
-      </ul>
-    </div>
+    <ul class="mt-2 ml-8 space-y-1">
+      <!-- prettier-ignore-->
+      {{ partial "resume_li.html" (dict "content" "Design, develop, and deploy custom software solutions to streamline existing processes and improve accessibility of project data.") }}
+      {{ partial "resume_li.html" (dict "content" "Implement and troubleshoot 3D machine control technology for grading and paving operations.") }}
+      {{ partial "resume_li.html" (dict "content" "Collaborate with project team members to plan, schedule, and execute project objectives.") }}
+      {{ partial "resume_li.html" (dict "content" "Generate extensive job cost analyses, including projections of future work and cost-to-date breakdowns.") }}
+      {{ partial "resume_li.html" (dict "content" "Developed & deployed company website using HUGO, TailwindCSS, AlpineJS, and Netlify.") }}
+    </ul>
   </section>
 
   <!-- === PROJECT EXPERIENCE === -->
-  <section>
+  <section class="mt-6">
     {{ partial "resume_header.html" (dict "title" "Project Experience") }}
-    <div>test</div>
+    <div class="mt-4 flex items-end">
+      <h3 class="text-lg font-bold leading-none">Force Account Generator</h3>
+      <a
+        href="https://force-account-generator.herokuapp.com"
+        class="ml-6 leading-none shadow-blue-100 hover:shadow-blue-200"
+        >https://force-account-generator.herokuapp.com</a
+      >
+    </div>
+    <ul class="mt-2 space-y-1">
+      <!-- prettier-ignore-->
+      {{ partial "resume_li.html" (dict "content" "Designed and deployed a web application that reads in Excel data and serves a generated PDF form.") }}
+      {{ partial "resume_li.html" (dict "content" "Built full stack application with Django, utilizing asynchronous tasks, S3 storage, and a reactive frontend.") }}
+      {{ partial "resume_li.html" (dict "content" "Reduced workload by automating the form-filling process, eliminating hundreds of hours of data entry.")}}
+    </ul>
+    <div class="mt-4 flex items-end">
+      <h3 class="text-lg font-bold leading-none">Ticket Crawler</h3>
+      <a
+        href="https://github.com/bk7987/ticket-crawler"
+        class="ml-6 leading-none shadow-blue-100 hover:shadow-blue-200"
+        >https://github.com/bk7987/ticket-crawler</a
+      >
+    </div>
+    <ul class="mt-2 space-y-1">
+      <!-- prettier-ignore-->
+      {{ partial "resume_li.html" (dict "content" "Built Dockerized application that automatically scrapes material ticketing service website, assembles PDFs based on material type, stores data in a PostgreSQL database, and emails PDFs to recipients.") }}
+    </ul>
+    <div class="mt-4 flex items-end">
+      <h3 class="text-lg font-bold leading-none">Complete Tabs</h3>
+      <a
+        href="https://github.com/bk7987/complete-tabs"
+        class="ml-6 leading-none shadow-blue-100 hover:shadow-blue-200"
+        >https://github.com/bk7987/complete-tabs</a
+      >
+    </div>
+    <ul class="mt-2 space-y-1">
+      <!-- prettier-ignore-->
+      {{ partial "resume_li.html" (dict "content" "Designed a Python application that reads PDF contract drawings and extracts information to a sortable and filterable Excel spreadsheet for simplified jobsite data consumption.") }}
+      {{ partial "resume_li.html" (dict "content" "Created a fully-featured API (NodeJS/Typescript) for all CRUD operations relating to job contract data.") }}
+    </ul>
+    <div class="mt-4 flex items-end">
+      <h3 class="text-lg font-bold leading-none">Timecards</h3>
+      <a
+        href="https://github.com/bk7987/timecards"
+        class="ml-6 leading-none shadow-blue-100 hover:shadow-blue-200"
+        >https://github.com/bk7987/timecards</a
+      >
+    </div>
+    <ul class="mt-2 space-y-1">
+      <!-- prettier-ignore-->
+      {{ partial "resume_li.html" (dict "content" "Developing web application that aggregates company timecard data to an accessible, centralized location for simplified review and analysis.") }}
+      {{ partial "resume_li.html" (dict "content" "Designed backend server API, written in Go, that continuously retrieves and stores data from a 3rd party API and exposes the data for client-side consumption.") }}
+      {{ partial "resume_li.html" (dict "content" "Creating React/Typescript frontend utilizing Redux state management and continuous polling of API for realtime data updates.") }}
+    </ul>
+    <div class="mt-4 flex items-end">
+      <h3 class="text-lg font-bold leading-none">BlackBat Project</h3>
+    </div>
+    <ul class="mt-2 space-y-1">
+      <!-- prettier-ignore-->
+      {{ partial "resume_li.html" (dict "content" "Contributed as part of a multi-disciplinary team to design and deploy a weather-resistant, drone-mounted data collection system (Java) for Aramasuisse (Switzerland Office for Defence Procurement).") }}
+    </ul>
   </section>
-</div>
-<div
-  class="mt-24 p-4 flex items-center justify-between rounded-lg shadow-lg bg-blue-500 text-gray-100"
->
-  <span class="text-lg">Download a PDF version of my resume here</span>
-  <button
-    class="px-6 py-3 flex items-center font-bold bg-white shadow rounded-lg hover:bg-gray-50 transition-colors"
-  >
-    {{ partial "icon_download.html" (dict "class" "h-6 w-6 text-gray-600")}}
-    <span class="ml-2 text-gray-700">Download</span>
-  </button>
 </div>
 
 {{end }}

@@ -2,7 +2,7 @@
 @tailwind components;
 
 .form-field {
-  @apply border border-gray-300 rounded p-3 bg-gray-50 focus:outline-none focus:ring focus:border-blue-400 transition-shadow;
+  @apply border border-gray-300 rounded p-3 bg-gray-50 focus:outline-none focus:ring focus:border-blue-400 focus:bg-white transition-shadow;
 }
 
 @tailwind utilities;

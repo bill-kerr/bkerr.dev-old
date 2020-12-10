@@ -28,9 +28,6 @@ module.exports = {
       backgroundImage: {
         wave: 'url(/img/wave.svg)',
       },
-      margin: {
-        2.25: '0.5625rem',
-      },
     },
   },
   variants: {
