@@ -1,7 +1,7 @@
 <!-- prettier-ignore -->
 {{ $curPage := .Page.Params.Name }}
-{{ $active := "shadow-blue-200 hover:shadow-blue-200 text-gray-900" }}
-{{ $inactive := "hover:shadow-blue-100" }}
+{{ $active := "pl-1 pr-2 shadow-blue-200 hover:shadow-blue-200 text-gray-900" }}
+{{ $inactive := "pl-1 pr-2 hover:shadow-blue-100" }}
 {{ $about := $inactive }}
 {{ $blog := $inactive }}
 {{ $projects := $inactive }}
@@ -19,7 +19,7 @@
 {{ $contact = $active }}
 {{ end }}
 
-<ul class="flex items-center space-x-8 text-sm text-gray-600 uppercase">
+<ul class="flex items-center space-x-5 text-sm text-gray-600 uppercase">
   <li>
     <a href="/about" class="{{ $about }}">About Me</a>
   </li>

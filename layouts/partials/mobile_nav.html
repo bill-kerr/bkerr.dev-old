@@ -1,4 +1,25 @@
-<div class="p-6 fixed inset-0 bg-gray-50 z-50" x-show="menuOpen">
+<!-- prettier-ignore -->
+{{ $curPage := .Page.Params.Name }}
+{{ $active := "ml-2 pl-2 pr-4 self-start text-xl font-black text-gray-900 transition-colors shadow-blue-200 hover:shadow-blue-200" }}
+{{ $inactive := "ml-2 pl-2 pr-4 self-start text-xl font-black hover:text-gray-800 hover:shadow-blue-100 transition-colors" }}
+{{ $about := $inactive }}
+{{ $blog := $inactive }}
+{{ $projects := $inactive }}
+{{ $resume := $inactive }}
+{{ $contact := $inactive }}
+{{ if eq $curPage "about" }}
+{{ $about = $active }}
+{{ else if (eq $curPage "blog") }}
+{{ $blog = $active }}
+{{ else if (eq $curPage "projects") }}
+{{ $projects = $active }}
+{{ else if (eq $curPage "resume") }}
+{{ $resume = $active }}
+{{ else if (eq $curPage "contact") }}
+{{ $contact = $active }}
+{{ end }}
+
+<div class="p-6 fixed inset-0 bg-gray-50 z-50" x-show="menuOpen" x-cloak>
   <div class="flex items-start justify-between">
     <div class="flex items-center">
       <a href="/" class="block flex-shrink-0 w-12 group">
@@ -23,11 +44,11 @@
     </button>
   </div>
   <ul class="mt-12 flex flex-col space-y-4 text-gray-700">
-    <a href="/about" class="px-4 self-start text-xl font-black">About Me</a>
-    <a href="/blog" class="px-4 self-start text-xl font-black">Blog</a>
-    <a href="/projects" class="px-4 self-start text-xl font-black">Projects</a>
-    <a href="/resume" class="px-4 self-start text-xl font-black">Resume</a>
-    <a href="/contact" class="px-4 self-start text-xl font-black">Contact</a>
+    <a href="/about" class="{{ $about }}">About Me</a>
+    <a href="/blog" class="{{ $blog }}">Blog</a>
+    <a href="/projects" class="{{ $projects }}">Projects</a>
+    <a href="/resume" class="{{ $resume }}">Resume</a>
+    <a href="/contact" class="{{ $contact }}">Contact</a>
   </ul>
   <div class="absolute bottom-2 right-2">
     <img src="/img/square_pattern.svg" alt="pattern" class="h-56 transform rotate-180" />

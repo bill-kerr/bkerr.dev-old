@@ -8,7 +8,7 @@
   x-data="{menuOpen: false}"
   x-bind:class="{'overflow-hidden': menuOpen}"
 >
-  <div>{{ partial "mobile_nav.html" }}</div>
+  <div>{{ partial "mobile_nav.html" . }}</div>
   <div class="max-w-screen-lg mx-auto p-6 pb-12 flex flex-col lg:flex-row">
     {{ partial "sidebar.html" . }}
     <div class="lg:ml-12 w-full">
