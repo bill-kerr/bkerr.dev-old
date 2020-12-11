@@ -25,7 +25,7 @@ module.exports = {
         'blue-200':
           'rgb(255, 255, 255) 0px -0.125em 0px 0px inset, rgb(191, 219, 254) 0px -0.5em 0px 0px inset',
         'blue-100':
-          'rgb(255, 255, 255) 0px -0.125em 0px 0px inset, rgb(219, 234, 254) 0px -0.5em 0px 0px inset',
+          'rgb(249, 250, 251) 0px -0.125em 0px 0px inset, rgb(219, 234, 254) 0px -0.5em 0px 0px inset',
       },
       backgroundImage: {
         wave: 'url(/img/wave.svg)',

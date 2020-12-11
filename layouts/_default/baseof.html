@@ -15,23 +15,21 @@
       <img src="/img/square_pattern.svg" alt="pattern" class="h-56 transform rotate-90" />
     </div>
   </div>
-  <div>{{ partial "nav_mobile.html" . }}</div>
-  <div class="relative max-w-screen-lg mx-auto p-6 pb-12 flex flex-col lg:flex-row">
+  {{ partial "nav_mobile.html" . }}
+  <div class="relative max-w-screen-lg mx-auto p-6 pb-12 flex flex-col lg:flex-row min-h-screen">
     <!-- prettier-ignore -->
-    {{ if not .IsHome }}
     {{ partial "sidebar.html" . }}
-    {{ end }}
-    <div class="lg:ml-12 w-full">
+    <div class="lg:ml-12 w-full flex flex-col flex-1 justify-center lg:justify-start lg:flex-0">
       <!-- prettier-ignore -->
       <div class="hidden lg:block">
         {{ partial "nav.html" . }}
       </div>
-      <div class="mt-12">{{ block "main" . }} {{ end }}</div>
+      <div class="mt-12 lg:flex-grow">{{ block "main" . }} {{ end }}</div>
     </div>
   </div>
   <button
     @click.prevent="menuOpen = true"
-    class="p-2 fixed bottom-4 right-4 z-50 cursor-pointer bg-gray-900 bg-opacity-50 text-white rounded-full hover:bg-opacity-75 transition-opacity focus:outline-none focus:ring"
+    class="lg:hidden p-2 fixed bottom-4 right-4 z-50 cursor-pointer bg-gray-900 bg-opacity-50 text-white rounded-full hover:bg-opacity-75 transition-opacity focus:outline-none focus:ring"
     x-bind:class="{'hidden': pos < 400 || menuOpen}"
   >
     <!-- prettier-ignore -->
