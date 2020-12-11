@@ -8,7 +8,7 @@
 {{ $projects := $inactive }}
 {{ $resume := $inactive }}
 {{ $contact := $inactive }}
-{{ if .IsHome }}
+{{ if (eq $curPage "about") }}
 {{ $about = $active }}
 {{ else if (eq $curPage "blog") }}
 {{ $blog = $active }}
@@ -22,7 +22,7 @@
 
 <ul class="flex items-center space-x-5 text-sm text-gray-600 uppercase">
   <li>
-    <a href="/" class="{{ $about }}">About Me</a>
+    <a href="/about" class="{{ $about }}">About Me</a>
   </li>
   <li>
     <a href="/blog" class="{{ $blog }}">Blog</a>

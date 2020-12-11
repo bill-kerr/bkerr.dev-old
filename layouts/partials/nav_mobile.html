@@ -7,7 +7,7 @@
 {{ $projects := $inactive }}
 {{ $resume := $inactive }}
 {{ $contact := $inactive }}
-{{ if .IsHome }}
+{{ if (eq $curPage "about") }}
 {{ $about = $active }}
 {{ else if (eq $curPage "blog") }}
 {{ $blog = $active }}
