@@ -30,7 +30,8 @@
   >
 </div>
 
-<div class="mt-8 flex items-center">
+<!-- TECHNOLOGIES -->
+<div class="mt-8 flex items-center" id="technologies">
   <span class="h-3 w-3 bg-blue-500"></span>
   <h3 class="ml-2 text-blue-500 uppercase tracking-wide font-bold text-sm leading-none">
     Technologies
@@ -38,6 +39,36 @@
 </div>
 <ul class="mt-3 space-y-3">
   <!-- prettier-ignore -->
-  {{ partial "fav_li.html" (dict "title" "TailwindCSS" "description" "My favorite CSS tool. Encourages consistent design, total flexibility, and no more inventing painful CSS class names." "link" "https://tailwindcss.com") }}
-  {{ partial "fav_li.html" (dict "title" "Typescript" "description" "It's hard to imagine writing an application in plain Javascript after using Typescript." "link" "https://www.typescriptlang.org") }}
+  {{ partial "fav_li.html" (dict "title" "TailwindCSS" "description" "My favorite CSS tool. Encourages consistent design, has total flexibility, and no more inventing painful CSS class names." "link" "https://tailwindcss.com") }}
+  {{ partial "fav_li.html" (dict "title" "TypeScript" "description" "It's hard to imagine writing an application in plain Javascript after using TypeScript." "link" "https://www.typescriptlang.org") }}
+  {{ partial "fav_li.html" (dict "title" "AlpineJS" "description" "Before reaching for create-react-app to implement a dropdown, consider using the ultra-simple AlpineJS." "link" "https://github.com/alpinejs/alpine") }}
+  {{ partial "fav_li.html" (dict "title" "TypeStack" "description" "Collection of excellent decorator-based TypeScript libraries including an ORM, validator, object-transformer, and more." "link" "https://github.com/typestack") }}
+  {{ partial "fav_li.html" (dict "title" "Netlify" "description" "Web hosting platform that provides a fantastic user experience." "link" "https://netlify.com") }}
+  {{ partial "fav_li.html" (dict "title" "Hugo" "description" "Lightning-fast static site generator with tons of great options." "link" "https://gohugo.io") }}
+  {{ partial "fav_li.html" (dict "title" "Svelte" "description" "Exciting frontend framework that doesn't use a virtual DOM." "link" "https://svelte.dev") }}
+</ul>
+
+<!-- DEVELOPERS -->
+<div class="mt-8 flex items-center" id="developers">
+  <span class="h-3 w-3 bg-yellow-500"></span>
+  <h3 class="ml-2 text-yellow-500 uppercase tracking-wide font-bold text-sm leading-none">
+    Developers
+  </h3>
+</div>
+<ul class="mt-3 space-y-3">
+  <!-- prettier-ignore -->
+  {{ partial "fav_li.html" (dict "title" "Stephen Grider" "description" "He does the computers. Produces fantastic courses on Udemy and is just a brilliant person." "link" "https://twitter.com/ste_grider") }}
+  {{ partial "fav_li.html" (dict "title" "Adam Wathan" "description" "Well-known in the Laravel community, but recently created TailwindCSS. Produces A+ level content." "link" "https://twitter.com/adamwathan") }}
+  {{ partial "fav_li.html" (dict "title" "Rich Harris" "description" "Creator of Svelte. Has unique and big ideas." "link" "https://twitter.com/Rich_Harris") }}
+</ul>
+
+<!-- COOKING -->
+<div class="mt-8 flex items-center" id="cooking">
+  <span class="h-3 w-3 bg-red-500"></span>
+  <h3 class="ml-2 text-red-500 uppercase tracking-wide font-bold text-sm leading-none">Cooking</h3>
+</div>
+<ul class="mt-3 space-y-3">
+  <!-- prettier-ignore -->
+  {{ partial "fav_li.html" (dict "title" "America's Test Kitchen" "description" "My source of truth for all things cooking. Amazingly consistent and terrific results." "link" "https://twitter.com/testkitchen") }}
+  {{ partial "fav_li.html" (dict "title" "J. Kenji Lopez-Alt" "description" "Fantastic chef with a facts-based approach to cooking." "link" "https://twitter.com/kenjilopezalt") }}
 </ul>
