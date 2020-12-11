@@ -5,6 +5,10 @@
   @apply border border-gray-300 rounded p-3 bg-gray-50 focus:outline-none focus:ring focus:border-blue-400 focus:bg-white transition-shadow;
 }
 
+.hyperlink {
+  @apply shadow-blue-100 hover:shadow-blue-200 transition-shadow;
+}
+
 [x-cloak] {
   display: none;
 }

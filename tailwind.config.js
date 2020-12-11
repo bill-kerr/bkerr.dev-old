@@ -16,7 +16,9 @@ module.exports = {
       black: colors.black,
       gray: colors.gray,
       blue: colors.blue,
-      lblue: colors.lightBlue,
+      red: colors.red,
+      green: colors.green,
+      yellow: colors.yellow,
     },
     extend: {
       boxShadow: {

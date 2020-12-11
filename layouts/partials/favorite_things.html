@@ -1,0 +1,43 @@
+<h2 class="mt-16 text-2xl font-black text-gray-800">My Favorite Things</h2>
+<p class="text-gray-600 test-sm leading-tight">
+  A list of my best-loved technologies, people, resources, and items.
+</p>
+
+<div
+  class="mt-3 flex flex-col sm:flex-row items-start sm:space-x-4 space-y-2 sm:space-y-0 flex-wrap"
+>
+  <a
+    href="#technologies"
+    class="relative inset-0 px-4 py-1 rounded-full bg-blue-500 hover:bg-blue-600 transition-colors text-white"
+  >
+    #Technologies
+  </a>
+  <a
+    href="#developers"
+    class="relative inset-0 px-4 py-1 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors text-white"
+  >
+    #Developers
+  </a>
+  <a
+    href="#cooking"
+    class="relative inset-0 px-4 py-1 rounded-full bg-red-500 hover:bg-red-600 transition-colors text-white"
+    >#Cooking</a
+  >
+  <a
+    href="#podcasts"
+    class="relative inset-0 px-4 py-1 rounded-full bg-green-500 hover:bg-green-600 transition-colors text-white"
+    >#Podcasts</a
+  >
+</div>
+
+<div class="mt-8 flex items-center">
+  <span class="h-3 w-3 bg-blue-500"></span>
+  <h3 class="ml-2 text-blue-500 uppercase tracking-wide font-bold text-sm leading-none">
+    Technologies
+  </h3>
+</div>
+<ul class="mt-3 space-y-3">
+  <!-- prettier-ignore -->
+  {{ partial "fav_li.html" (dict "title" "TailwindCSS" "description" "My favorite CSS tool. Encourages consistent design, total flexibility, and no more inventing painful CSS class names." "link" "https://tailwindcss.com") }}
+  {{ partial "fav_li.html" (dict "title" "Typescript" "description" "It's hard to imagine writing an application in plain Javascript after using Typescript." "link" "https://www.typescriptlang.org") }}
+</ul>
