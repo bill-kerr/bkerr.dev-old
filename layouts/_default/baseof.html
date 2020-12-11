@@ -25,13 +25,15 @@
       <div class="mt-12">{{ block "main" . }} {{ end }}</div>
     </div>
   </div>
-  <div
-    @click.prevent="$refs.top.scrollIntoView()"
-    class="fixed bottom-4 right-4 z-50 cursor-pointer group"
+  <button
+    @click.prevent="menuOpen = true"
+    class="p-2 fixed bottom-4 right-4 z-50 cursor-pointer bg-gray-900 bg-opacity-50 text-white rounded-full hover:bg-opacity-75 transition-opacity focus:outline-none focus:ring"
     @scroll.window="pos = window.pageYOffset"
-    x-bind:class="{'hidden': pos < 400}"
+    x-bind:class="{'hidden': pos < 400 || menuOpen}"
   >
     <!-- prettier-ignore -->
-    {{ partial "icon_chevron_up.html" (dict "class" "h-6 w-6 bg-gray-900 bg-opacity-50 text-white rounded-full group-hover:bg-opacity-75 transition-opacity")}}
-  </div>
+    {{ partial "icon_menu.html" (dict "class" "h-6 w-6")}}
+  </button>
 </body>
+
+{{/* @click.prevent="$refs.top.scrollIntoView()" */}}
