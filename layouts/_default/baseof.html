@@ -19,7 +19,11 @@
   <div class="relative max-w-screen-lg mx-auto p-6 pb-12 flex flex-col lg:flex-row min-h-screen">
     <!-- prettier-ignore -->
     {{ partial "sidebar.html" . }}
-    <div class="lg:ml-12 w-full flex flex-col flex-1 justify-center lg:justify-start lg:flex-0">
+    {{ $justify := "" }}
+    {{ if .IsHome }}
+    {{ $justify = "justify-start" }}
+    {{ end }}
+    <div class="lg:ml-12 w-full flex flex-col flex-1 {{ $justify }} lg:justify-start lg:flex-0">
       <!-- prettier-ignore -->
       <div class="hidden lg:block">
         {{ partial "nav.html" . }}
