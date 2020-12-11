@@ -29,7 +29,7 @@
           class="rounded-full ring-4 ring-gray-300 group-hover:ring-blue-200"
         />
       </a>
-      <div class="ml-4 flex flex-col">
+      <div class="ml-4 flex flex-col leading-none">
         <span class="font-black text-2xl">Bill Kerr</span>
         <span class="text-gray-600">Software Developer</span>
       </div>
@@ -50,14 +50,14 @@
     <a href="/resume" class="{{ $resume }}">Resume</a>
     <a href="/contact" class="{{ $contact }}">Contact</a>
   </div>
-  <div class="ml-4 mt-16 flex items-center">
+  <div class="ml-4 mt-12 flex items-center">
     <a href="https://github.com/bk7987">
       <!-- prettier-ignore -->
-      {{ partial "icon_github" (dict "class" "h-6 w-6 text-gray-400 hover:text-github transition-colors") }}
+      {{ partial "icon_github" (dict "class" "h-8 w-8 text-gray-400 hover:text-github transition-colors") }}
     </a>
-    <a href="https://www.linkedin.com/in/william-kerr-32394473/" class="ml-3">
+    <a href="https://www.linkedin.com/in/william-kerr-32394473/" class="ml-4">
       <!-- prettier-ignore -->
-      {{ partial "icon_linkedin" (dict "class" "h-6 w-6 text-gray-400 hover:text-linkedin transition-colors") }}
+      {{ partial "icon_linkedin" (dict "class" "h-8 w-8 text-gray-400 hover:text-linkedin transition-colors") }}
     </a>
   </div>
   <div class="absolute bottom-2 right-2">

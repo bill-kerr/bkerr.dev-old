@@ -27,30 +27,34 @@
 
 <section class="mt-16">{{ partial "favorite_things.html" . }}</section>
 
-<h2 class="mt-16 text-2xl font-black text-gray-800" id="cats">Cat Section</h2>
-<p class="text-gray-600 test-sm">Because people love cats. Say hi to these good boys.</p>
-<div class="mt-2 flex space-x-3">
-  <div class="relative">
-    <img
-      src="/img/ivan.jpg"
-      alt="Ivan the Terrible"
-      class="relative h-32 w-32 border-4 border-white rounded-full object-cover"
-    />
-    <span
-      class="py-1 px-2 absolute bottom-1 right-0 bg-blue-600 border-4 border-white rounded-full font-bold text-white"
-      >Ivan</span
-    >
+<section class="mt-16">
+  <h2 class="text-2xl font-black text-gray-800" id="cats">Cat Section</h2>
+  <p class="text-gray-600 test-sm leading-tight">
+    Because people love cats. Say hi to these good boys.
+  </p>
+  <div class="mt-2 flex space-x-3">
+    <div class="relative">
+      <img
+        src="/img/ivan.jpg"
+        alt="Ivan the Terrible"
+        class="relative h-32 w-32 border-4 border-white rounded-full object-cover"
+      />
+      <span
+        class="py-1 px-2 absolute bottom-1 right-0 bg-blue-600 border-4 border-white rounded-full font-bold text-white"
+        >Ivan</span
+      >
+    </div>
+    <div class="relative">
+      <img
+        src="/img/scout.jpg"
+        alt="Scout the Gentleman"
+        class="relative h-32 w-32 border-4 border-white rounded-full object-cover"
+      />
+      <span
+        class="py-1 px-2 absolute bottom-1 right-0 bg-blue-600 border-4 border-white rounded-full font-bold text-white"
+        >Scout</span
+      >
+    </div>
   </div>
-  <div class="relative">
-    <img
-      src="/img/scout.jpg"
-      alt="Scout the Gentleman"
-      class="relative h-32 w-32 border-4 border-white rounded-full object-cover"
-    />
-    <span
-      class="py-1 px-2 absolute bottom-1 right-0 bg-blue-600 border-4 border-white rounded-full font-bold text-white"
-      >Scout</span
-    >
-  </div>
-</div>
+</section>
 {{ end }}
