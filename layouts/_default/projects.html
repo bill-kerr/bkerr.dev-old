@@ -1,3 +1,13 @@
 {{ define "main" }}
-<div>this is the projects page</div>
+
+<!-- prettier-ignore -->
+{{ range .Pages }}
+  {{ $desc := .Params.description }}
+  {{ $title := .Params.title }}
+  {{ $github := .Params.github }}
+  {{ $web := .Params.web }}
+  {{ $img := .Params.preview_img }}
+  {{ partial "project_preview.html" (dict "desc" $desc "title" $title "github" $github "web" $web "img" $img) }}
+{{ end }}
+
 {{end }}

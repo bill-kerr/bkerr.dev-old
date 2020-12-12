@@ -20,20 +20,22 @@
 {{ $contact = $active }}
 {{ end }}
 
-<ul class="flex items-center space-x-5 text-sm text-gray-600 uppercase">
-  <li>
-    <a href="/about" class="{{ $about }}">About Me</a>
-  </li>
-  <li>
-    <a href="/blog" class="{{ $blog }}">Blog</a>
-  </li>
-  <li>
-    <a href="/projects" class="{{ $projects }}">Projects</a>
-  </li>
-  <li>
-    <a href="/resume" class="{{ $resume }}">Resume</a>
-  </li>
-  <li>
-    <a href="/contact" class="{{ $contact }}">Contact</a>
-  </li>
-</ul>
+<nav class="">
+  <ul class="flex items-center space-x-5 text-gray-600 font-black leading-none">
+    <li>
+      <a href="/about" class="{{ $about }}">About Me</a>
+    </li>
+    <li>
+      <a href="/blog" class="{{ $blog }}">Blog</a>
+    </li>
+    <li>
+      <a href="/projects" class="{{ $projects }}">Projects</a>
+    </li>
+    <li>
+      <a href="/resume" class="{{ $resume }}">Resume</a>
+    </li>
+    <li>
+      <a href="/contact" class="{{ $contact }}">Contact</a>
+    </li>
+  </ul>
+</nav>

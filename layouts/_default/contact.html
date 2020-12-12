@@ -1,36 +1,36 @@
 {{ define "main" }}
-  <h2 class="text-2xl font-black text-gray-700">Contact Me</h2>
-  <p class="mt-1 text-gray-600 leading-tight">
-    Feel free to contact me via any one of the methods below. Use the form to send me an email!
-  </p>
-  <ul class="mt-6 space-y-6">
-    <li class="px-2 flex items-center">
-      {{ partial "icon_mail.html" (dict "class" "w-6 h-6 flex-shrink-0 text-gray-600") }}
-      <a href="mailto:bk7987@gmail.com" class="ml-4 pl-1 pr-2 hyperlink">bk7987@gmail.com</a>
-    </li>
-    <li class="px-2 flex items-center">
-      {{ partial "icon_phone.html" (dict "class" "w-6 h-6 flex-shrink-0 text-gray-600") }}
-      <span class="ml-4">(215) 514-3619</span>
-    </li>
-    <li class="px-2 flex items-center">
-      {{ partial "icon_github.html" (dict "class" "h-6 w-6 flex-shrink-0 text-github") }}
-      <a href="https://github.com/bk7987" class="ml-4 pl-1 pr-2 hyperlink"
-        >https://github.com/bk7987</a
-      >
-    </li>
-    <li class="px-2 flex items-center">
-      {{ partial "icon_linkedin.html" (dict "class" "h-6 w-6 flex-shrink-0 text-linkedin") }}
-      <a
-        href="https://www.linkedin.com/in/william-kerr-32394473/"
-        class="ml-4 pl-1 pr-2 hidden sm:inline-block hyperlink"
-        >https://www.linkedin.com/in/william-kerr-32394473/</a
-      >
-      <a
-        href="https://www.linkedin.com/in/william-kerr-32394473/"
-        class="ml-4 pl-1 pr-2 sm:hidden hyperlink"
-        >My LinkedIn</a
-      >
-    </li>
-  </ul>
+<h1 class="text-2xl font-black text-gray-700">Contact Me</h1>
+<p class="mt-1 text-gray-600 leading-tight">
+  Feel free to contact me via any one of the methods below. Use the form to send me an email!
+</p>
+<ul class="mt-6 space-y-6">
+  <li class="px-2 flex items-center">
+    {{ partial "icon_mail.html" (dict "class" "w-6 h-6 flex-shrink-0 text-gray-600") }}
+    <a href="mailto:bk7987@gmail.com" class="ml-4 pl-1 pr-2 hyperlink">bk7987@gmail.com</a>
+  </li>
+  <li class="px-2 flex items-center">
+    {{ partial "icon_phone.html" (dict "class" "w-6 h-6 flex-shrink-0 text-gray-600") }}
+    <span class="ml-4">(215) 514-3619</span>
+  </li>
+  <li class="px-2 flex items-center">
+    {{ partial "icon_github.html" (dict "class" "h-6 w-6 flex-shrink-0 text-github") }}
+    <a href="https://github.com/bk7987" class="ml-4 pl-1 pr-2 hyperlink"
+      >https://github.com/bk7987</a
+    >
+  </li>
+  <li class="px-2 flex items-center">
+    {{ partial "icon_linkedin.html" (dict "class" "h-6 w-6 flex-shrink-0 text-linkedin") }}
+    <a
+      href="https://www.linkedin.com/in/william-kerr-32394473/"
+      class="ml-4 pl-1 pr-2 hidden sm:inline-block hyperlink"
+      >https://www.linkedin.com/in/william-kerr-32394473/</a
+    >
+    <a
+      href="https://www.linkedin.com/in/william-kerr-32394473/"
+      class="ml-4 pl-1 pr-2 sm:hidden hyperlink"
+      >My LinkedIn</a
+    >
+  </li>
+</ul>
 <div class="mt-12">{{ partial "contact_form.html" . }}</div>
 {{end }}

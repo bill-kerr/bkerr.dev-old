@@ -1,0 +1,36 @@
+<div class="flex flex-col sm:flex-row">
+  <div class="sm:w-1/3 flex-shrink-0">
+    <img
+      src="{{ .img }}"
+      alt="{{ .title }}"
+      class="shadow-lg transform -skew-y-1 -rotate-1 rounded-lg"
+    />
+  </div>
+  <div class="mt-8 sm:mt-0 sm:ml-6 flex flex-col justify-between">
+    <div>
+      <a href="" class="pl-1 pr-2 inline-block text-lg font-black hyperlink">{{ .title }}</a>
+      <p class="mt-1 text-gray-600 leading-snug">{{ .desc }}</p>
+    </div>
+    <div class="mt-4 flex space-x-4">
+      <a
+        href=""
+        class="px-3 py-2 text-gray-600 bg-white hover:text-gray-700 transition-colors font-bold rounded-lg shadow"
+        >Learn More</a
+      >
+      <a
+        href="{{ .github }}"
+        class="px-3 py-2 flex flex-1 sm:flex-grow-0 items-center justify-center text-gray-600 bg-white hover:text-gray-700 transition-colors font-bold rounded-lg shadow"
+      >
+        {{ partial "icon_github.html" (dict "class" "h-5 w-5") }}
+        <span class="ml-2 px-3 sm:px-0 hidden sm:block">Github</span>
+      </a>
+      <a
+        href="{{ .web }}"
+        class="px-3 py-2 flex flex-1 sm:flex-grow-0 items-center justify-center text-white bg-blue-600 hover:bg-blue-700 transition-colors font-bold rounded-lg shadow"
+      >
+        {{ partial "icon_web.html" (dict "class" "h-5 w-5") }}
+        <span class="ml-2 hidden sm:block">Visit</span>
+      </a>
+    </div>
+  </div>
+</div>
