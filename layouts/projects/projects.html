@@ -1,14 +1,16 @@
 {{ define "main" }}
 
-<!-- prettier-ignore -->
-{{ range .Pages }}
-  {{ $desc := .Params.description }}
-  {{ $title := .Params.title }}
-  {{ $github := .Params.github }}
-  {{ $web := .Params.web }}
-  {{ $img := .Params.preview_img }}
-  {{ $link := .Permalink }}
-  {{ partial "project_preview.html" (dict "desc" $desc "title" $title "github" $github "web" $web "img" $img "link" $link) }}
-{{ end }}
+<div class="space-y-12">
+  <!-- prettier-ignore -->
+  {{ range .Pages }}
+    {{ $desc := .Params.description }}
+    {{ $title := .Params.title }}
+    {{ $github := .Params.github }}
+    {{ $web := .Params.web }}
+    {{ $img := .Params.preview_img }}
+    {{ $link := .Permalink }}
+    {{ partial "project_preview.html" (dict "desc" $desc "title" $title "github" $github "web" $web "img" $img "link" $link) }}
+  {{ end }}
+</div>
 
 {{end }}
