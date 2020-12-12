@@ -4,7 +4,7 @@
   {{ partial "head.html" . }}
 </html>
 <body
-  class="min-h-screen antialiased text-gray-900 bg-gray-50 font-display bg-wave bg-no-repeat bg-bottom"
+  class="min-h-screen antialiased text-gray-900 bg-gray-50 font-display lg:bg-wave bg-no-repeat bg-bottom"
   x-data="{menuOpen: false, pos: window.pageYOffset}"
   x-bind:class="{'overflow-hidden': menuOpen}"
   x-ref="top"
@@ -19,16 +19,12 @@
   <div class="relative max-w-screen-lg mx-auto p-6 pb-12 flex flex-col lg:flex-row min-h-screen">
     <!-- prettier-ignore -->
     {{ partial "sidebar.html" . }}
-    {{ $justify := "" }}
-    {{ if .IsHome }}
-    {{ $justify = "justify-start" }}
-    {{ end }}
-    <div class="lg:ml-12 w-full flex flex-col flex-1 {{ $justify }} lg:justify-start lg:flex-0">
+    <div class="lg:ml-12 w-full flex flex-col flex-1">
       <!-- prettier-ignore -->
       <div class="hidden lg:block">
         {{ partial "nav.html" . }}
       </div>
-      <div class="mt-12 lg:flex-grow">{{ block "main" . }} {{ end }}</div>
+      <div class="mt-12 flex flex-col flex-grow">{{ block "main" . }} {{ end }}</div>
     </div>
   </div>
   <button
@@ -40,5 +36,3 @@
     {{ partial "icon_menu.html" (dict "class" "h-7 w-7")}}
   </button>
 </body>
-
-{{/* @click.prevent="$refs.top.scrollIntoView()" */}}

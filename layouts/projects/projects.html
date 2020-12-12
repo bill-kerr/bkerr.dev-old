@@ -7,7 +7,8 @@
   {{ $github := .Params.github }}
   {{ $web := .Params.web }}
   {{ $img := .Params.preview_img }}
-  {{ partial "project_preview.html" (dict "desc" $desc "title" $title "github" $github "web" $web "img" $img) }}
+  {{ $link := .Permalink }}
+  {{ partial "project_preview.html" (dict "desc" $desc "title" $title "github" $github "web" $web "img" $img "link" $link) }}
 {{ end }}
 
 {{end }}

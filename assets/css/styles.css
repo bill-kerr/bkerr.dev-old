@@ -2,11 +2,11 @@
 @tailwind components;
 
 .form-field {
-  @apply border border-gray-300 rounded p-3 bg-gray-50 focus:outline-none focus:ring focus:border-blue-400 focus:bg-white transition-shadow;
+  @apply border border-gray-300 rounded p-3 bg-gray-50 focus:outline-none focus:ring focus:border-blue-400 focus:bg-white transition-colors;
 }
 
 .hyperlink {
-  @apply shadow-blue-100 hover:shadow-blue-200 transition-shadow;
+  @apply shadow-blue-100 hover:shadow-blue-200 transition-colors;
 }
 
 [x-cloak] {
