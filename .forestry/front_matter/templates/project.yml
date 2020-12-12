@@ -17,3 +17,5 @@ fields:
 - type: file
   name: preview_img
   label: preview_img
+pages:
+- content/projects/firebase-authentication-client.md
