@@ -9,11 +9,13 @@ sections:
   label: Projects
   create: all
   match: "**/*"
+  exclude: "**/_index.md"
 - type: directory
   path: content/blog
   label: Blog
   create: all
   match: "**/*"
+  exclude: "**/_index.md"
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
