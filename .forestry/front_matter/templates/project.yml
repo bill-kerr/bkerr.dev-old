@@ -19,3 +19,4 @@ fields:
   label: preview_img
 pages:
 - content/projects/firebase-authentication-client.md
+- content/projects/timecards.md
