@@ -17,6 +17,11 @@ fields:
 - type: file
   name: preview_img
   label: preview_img
+- name: tags
+  type: tag_list
+  default: []
+  label: Technology Tags
+  description: A list of the technologies used on this project
 pages:
 - content/projects/firebase-authentication-client.md
 - content/projects/timecards.md
