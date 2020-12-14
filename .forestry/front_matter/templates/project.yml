@@ -24,4 +24,5 @@ fields:
   description: A list of the technologies used on this project
 pages:
 - content/projects/firebase-authentication-client.md
+- content/projects/james-j.anderson-construction-co.inc.website.md
 - content/projects/timecards.md
