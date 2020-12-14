@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ['Nunito Sans', 'sans-serif'],
+      mono: ['Source Code Pro', 'monospace'],
     },
     colors: {
       white: colors.white,

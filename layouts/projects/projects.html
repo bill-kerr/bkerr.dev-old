@@ -2,7 +2,7 @@
 
 <div class="space-y-20">
   <!-- prettier-ignore -->
-  {{ range .Pages }}
+  {{ range sort .Pages }}
     {{ $desc := .Params.description }}
     {{ $title := .Params.title }}
     {{ $github := .Params.github }}

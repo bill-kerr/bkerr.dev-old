@@ -5,8 +5,10 @@ preview_img = "/uploads/firebase_auth_client_preview.png"
 tags = ["Firebase", "Svelte", "TypeScript", "TailwindCSS"]
 title = "Firebase Authentication Client"
 web = "https://auth-client.netlify.app"
+sort = 3
 
 +++
+
 # Firebase Authentication Client
 
 Firebase Authentication Client is a simple frontend that helps you login and get user and authentication details from Google's [Firebase](https://firebase.google.com) service.
