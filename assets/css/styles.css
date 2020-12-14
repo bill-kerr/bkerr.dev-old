@@ -13,4 +13,49 @@
   display: none;
 }
 
+.markdown {
+  @apply text-gray-700 max-w-60ch;
+}
+
+.markdown a {
+  @apply shadow-blue-100 hover:shadow-blue-200 text-blue-900;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply mt-8 mb-3 font-black;
+}
+
+.markdown p {
+  @apply my-3 leading-relaxed;
+}
+
+.markdown h1 {
+  @apply text-4xl;
+}
+
+.markdown h2 {
+  @apply text-3xl;
+}
+
+.markdown h3 {
+  @apply text-2xl;
+}
+
+.markdown h4 {
+  @apply text-xl;
+}
+
+.markdown h5 {
+  @apply text-lg;
+}
+
+.markdown h6 {
+  @apply text-base;
+}
+
 @tailwind utilities;

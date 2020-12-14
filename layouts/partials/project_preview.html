@@ -18,9 +18,10 @@
     <div class="mt-4 flex space-x-4">
       <a
         href="{{ .link }}"
-        class="px-3 py-2 text-gray-600 bg-white hover:text-gray-700 transition-colors font-bold rounded-lg shadow"
+        class="px-3 py-2 flex-1 sm:flex-grow-0 flex-shrink-0 whitespace-nowrap text-center text-gray-600 bg-white hover:text-gray-700 transition-colors font-bold rounded-lg shadow"
         >Learn More</a
       >
+      {{ if not (eq .github "") }}
       <a
         href="{{ .github }}"
         class="px-3 py-2 flex flex-1 sm:flex-grow-0 items-center justify-center text-gray-600 bg-white hover:text-gray-700 transition-colors font-bold rounded-lg shadow"
@@ -28,6 +29,9 @@
         {{ partial "icon_github.html" (dict "class" "h-5 w-5") }}
         <span class="ml-2 px-3 sm:px-0 hidden sm:block">Github</span>
       </a>
+      <!-- prettier-ignore -->
+      {{ end }}
+      {{ if not (eq .web "") }}
       <a
         href="{{ .web }}"
         class="px-3 py-2 flex flex-1 sm:flex-grow-0 items-center justify-center text-white bg-blue-600 hover:bg-blue-700 transition-colors font-bold rounded-lg shadow"
@@ -35,6 +39,7 @@
         {{ partial "icon_web.html" (dict "class" "h-5 w-5") }}
         <span class="ml-2 hidden sm:block">Visit</span>
       </a>
+      {{ end }}
     </div>
   </div>
 </div>
