@@ -22,7 +22,12 @@ fields:
   default: []
   label: Technology Tags
   description: A list of the technologies used on this project
+- name: weight
+  type: text
+  config:
+    required: false
+  label: Weight
+  description: Order they will display. Higher numbers are first
 pages:
 - content/projects/firebase-authentication-client.md
-- content/projects/james-j.anderson-construction-co.inc.website.md
 - content/projects/timecards.md
