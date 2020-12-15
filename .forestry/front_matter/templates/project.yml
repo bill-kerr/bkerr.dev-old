@@ -31,4 +31,5 @@ fields:
 pages:
 - content/projects/firebase-authentication-client.md
 - content/projects/the-anderson-companies-websites.md
+- content/projects/ticket-crawler.md
 - content/projects/timecards.md
