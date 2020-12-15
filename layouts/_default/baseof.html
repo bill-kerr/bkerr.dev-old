@@ -16,11 +16,13 @@
     </div>
   </div>
   {{ partial "nav_mobile.html" . }}
-  <div class="relative max-w-screen-lg mx-auto p-6 pb-64 flex flex-col lg:flex-row min-h-screen">
+  <div class="relative max-w-screen-lg mx-auto p-6 flex flex-col lg:flex-row min-h-screen">
     <!-- prettier-ignore -->
     {{ $sidebarClass := "" }}
+    {{ $mainClass := "pb-64" }}
     {{ if .IsHome }}
     {{ $sidebarClass = "lg:hidden" }}
+    {{ $mainClass = "" }}
     {{ end }}
     <div class="{{ $sidebarClass }}">{{ partial "sidebar.html" . }}</div>
     <div class="lg:ml-12 w-full flex flex-col flex-1">
@@ -28,7 +30,9 @@
       <div class="hidden lg:block">
         {{ partial "nav.html" . }}
       </div>
-      <div class="mt-12 flex flex-col flex-grow">{{ block "main" . }} {{ end }}</div>
+      <div class="mt-12 flex flex-col flex-grow {{ $mainClass }}">
+        {{ block "main" . }} {{ end }}
+      </div>
     </div>
   </div>
   <button
