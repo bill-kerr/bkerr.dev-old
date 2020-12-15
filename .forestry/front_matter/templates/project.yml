@@ -30,4 +30,5 @@ fields:
   description: Order they will display. Higher numbers are first
 pages:
 - content/projects/firebase-authentication-client.md
+- content/projects/the-anderson-companies-websites.md
 - content/projects/timecards.md
