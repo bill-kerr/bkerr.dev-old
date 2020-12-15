@@ -1,6 +1,5 @@
 +++
 description = "Designed and deployed four websites for the Anderson Companies."
-draft = true
 github = ""
 preview_img = "/uploads/jja_construction_preview.png"
 tags = ["Hugo", "TailwindCSS", "AlpineJS", "JavaScript", "Forestry CMS", "Netlify"]
