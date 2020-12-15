@@ -16,7 +16,7 @@ tags:
   - JavaScript
   - CSS
   - AWS S3
-sort: 2
+weight: '1'
 ---
 
 # Force Account Generator

@@ -5,7 +5,7 @@ preview_img = "/uploads/timecards_preview.png"
 tags = ["Go", "Gorm", "PostgreSQL", "CRON", "GoFiber", "JWT", "TypeScript", "Redux", "Formik", "React"]
 title = "Timecards"
 web = ""
-sort = 1
+weight = "1"
 +++
 
 # Timecards

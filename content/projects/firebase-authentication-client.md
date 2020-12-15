@@ -5,7 +5,7 @@ preview_img = "/uploads/firebase_auth_client_preview.png"
 tags = ["Firebase", "Svelte", "TypeScript", "TailwindCSS"]
 title = "Firebase Authentication Client"
 web = "https://auth-client.netlify.app"
-sort = 3
+weight = ""
 
 +++
 

@@ -2,12 +2,13 @@
 description = "FleetWatcher material ticket aggregator and automated messenger."
 github = "https://github.com/bk7987/ticket-crawler"
 preview_img = "/uploads/tickets_preview.png"
-tags = ["TypeScript", "Express", "CRON", "Nodemailer", "AWS", "PostgreSQL", "Puppeteer", "Docker"]
+tags = ["TypeScript", "Express", "CRON", "Nodemailer", "AWS", "PostgreSQL", "Puppeteer", "Docker", "DigitalOcean"]
 title = "Ticket Crawler"
 web = ""
 weight = "1"
 
 +++
+
 # Ticket Crawler
 
 FleetWatcher material ticket aggregator and automated messenger.
