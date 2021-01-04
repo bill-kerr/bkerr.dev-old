@@ -41,3 +41,5 @@ fields:
   config:
     maxSize: 64
   label: preview_img
+pages:
+- content/blog/test-blog-post-title-goes-here.md
