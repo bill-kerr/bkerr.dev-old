@@ -1,7 +1,7 @@
 +++
 content = ""
 date = ""
-preview = "Construction project data is often provided in unwieldy tab sheets. Here's how I transformed it into valuable, easily consumable digital asset."
+preview = "Construction project data is often provided in unwieldy tab sheets. Here's how I transformed it into a valuable, easily consumable digital asset."
 preview_img = "/uploads/tab_sheet.PNG"
 title = "Digitizing Project Data"
 
