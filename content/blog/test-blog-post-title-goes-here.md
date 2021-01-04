@@ -1,14 +1,14 @@
 +++
-content = ""
-date = ""
+date = "2021-01-04"
 preview = "Construction project data is often provided in unwieldy tab sheets. Here's how I transformed it into a valuable, easily consumable digital asset."
 preview_img = "/uploads/tab_sheet.PNG"
 title = "Digitizing Project Data"
 
 +++
+
 # **Digitizing Project Data**
 
-Construction projects are often provided with project data from the designers in the form  of "tab sheets". Tab sheets are a way of organizing data by item of work and location. Due  to the fact that a construction project can potentially have thousands of items of work, a set of tab sheets can easily reach 100 pages of content. Searching, filtering, sorting, and aggregating a tab sheet set is painful and often not practical.
+Construction projects are often provided with project data from the designers in the form of "tab sheets". Tab sheets are a way of organizing data by item of work and location. Due to the fact that a construction project can potentially have thousands of items of work, a set of tab sheets can easily reach 100 pages of content. Searching, filtering, sorting, and aggregating a tab sheet set is painful and often not practical.
 
 The data provided by tab sheets is granular and rich with information that is largely inaccessible due to the format of the sheets themselves. After attempting to use the designer-provided tab sheets for a major construction project, I imagined there must be a better way to present and consume this data. First, let's understand how a tab sheet is organized.
 
@@ -22,25 +22,25 @@ The diagram above shows the basic layout of a tab sheet. Each row may have some 
 
 The problems with the layout are fourfold:
 
-* **The tables are sparse.** Most locations do not contain most items of work. This results in sparse tables, meaning a lot of space is unnecessarily wasted.
-* **The table is split over many pages.** In order to find all of the items of work for a given location, one must find all pages with said location.
-* **Street headings may not be on the same page.** Each street heading is only shown for the first set of locations. Any further set of locations will not contain a street heading, making it potentially difficult to know what street the current row belongs to.
-* **The data is disjointed.** Each phase of construction (drainage, road work, structure work, etc.) is split over different tab sheets.
+- **The tables are sparse.** Most locations do not contain most items of work. This results in sparse tables, meaning a lot of space is unnecessarily wasted.
+- **The table is split over many pages.** In order to find all of the items of work for a given location, one must find all pages with said location.
+- **Street headings may not be on the same page.** Each street heading is only shown for the first set of locations. Any further set of locations will not contain a street heading, making it potentially difficult to know what street the current row belongs to.
+- **The data is disjointed.** Each phase of construction (drainage, road work, structure work, etc.) is split over different tab sheets.
 
 ### **The Solution? Flatten it.**
 
 My goal was to essentially flatten the data. All of the above problems could be solved by transforming the table into a simple, two-dimensional data structure. My proposed table had the following headings:
 
-* Tab Set
-* Item #
-* Description
-* Quantity
-* Unit
-* Remarks
-* Street
-* Side
-* Begin Station
-* End Station
+- Tab Set
+- Item #
+- Description
+- Quantity
+- Unit
+- Remarks
+- Street
+- Side
+- Begin Station
+- End Station
 
 In order to extract the data from the PDF, I wrote a Python script that crawled the PDF and created a line item for every intersection of an "item of work" and a "location". The script then dumped the resulting data to a JSON file, allowing it to be imported into MS Excel, MS Access, or any tool that can handle JSON data.
 

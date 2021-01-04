@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="space-y-20">
+  <!-- prettier-ignore -->
+  {{ range sort .Pages }}
+    {{ $preview := .Params.preview }}
+    {{ $title := .Params.title }}
+    {{ $img := .Params.preview_img }}
+    {{ $link := .Permalink }}
+    {{ $tags := .Params.tags }}
+    {{ partial "blog_preview.html" (dict "preview" $preview "title" $title "img" $img "tags" $tags "link" $link) }}
+  {{ end }}
+</div>
+{{end }}
