@@ -7,7 +7,8 @@
     {{ $img := .Params.preview_img }}
     {{ $link := .Permalink }}
     {{ $tags := .Params.tags }}
-    {{ partial "blog_preview.html" (dict "preview" $preview "title" $title "img" $img "tags" $tags "link" $link) }}
+    {{ $date := .Params.date }}
+    {{ partial "blog_preview.html" (dict "preview" $preview "title" $title "img" $img "tags" $tags "link" $link "date" $date) }}
   {{ end }}
 </div>
 {{end }}

@@ -91,7 +91,11 @@
 }
 
 .markdown ul {
-  @apply list-disc list-inside;
+  @apply ml-6 list-disc list-outside;
+}
+
+.markdown img {
+  @apply my-6;
 }
 
 @tailwind utilities;
