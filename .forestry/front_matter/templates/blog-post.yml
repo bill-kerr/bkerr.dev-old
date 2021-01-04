@@ -1,4 +1,43 @@
 ---
 label: Blog post
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: content
+- name: date
+  type: datetime
+  label: date
+  description: ''
+  config:
+    required: false
+    date_format: YYYY-MM-DD
+    time_format: ''
+    display_utc: false
+    export_format: YYYY-MM-DD
+  hidden: true
+- name: preview
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: preview
+- name: preview_img
+  type: file
+  config:
+    maxSize: 64
+  label: preview_img
