@@ -2,36 +2,34 @@
 label: Project
 hide_body: false
 fields:
-  - type: text
-    name: title
-    label: title
-  - type: text
-    name: github
-    label: github
-  - type: text
-    name: web
-    label: web
-  - type: textarea
-    name: description
-    label: description
-  - type: file
-    name: preview_img
-    label: preview_img
-  - name: tags
-    type: tag_list
-    default: []
-    label: Technology Tags
-    description: A list of the technologies used on this project
-  - name: weight
-    type: text
-    config:
-      required: false
-    label: Weight
-    description: Order they will display. Higher numbers are first
+- type: text
+  name: title
+  label: title
+- type: text
+  name: github
+  label: github
+- type: text
+  name: web
+  label: web
+- type: textarea
+  name: description
+  label: description
+- type: file
+  name: preview_img
+  label: preview_img
+- name: tags
+  type: tag_list
+  default: []
+  label: Technology Tags
+  description: A list of the technologies used on this project
+- name: weight
+  type: text
+  config:
+    required: false
+  label: Weight
+  description: Order they will display. Higher numbers are first
 pages:
-  - content/projects/firebase-authentication-client.md
-  - content/projects/the-anderson-companies-websites.md
-  - content/projects/ticket-crawler.md
-  - content/projects/timecards.md
----
-
+- content/projects/firebase-authentication-client.md
+- content/projects/the-anderson-companies-websites.md
+- content/projects/ticket-crawler.md
+- content/projects/timecards.md

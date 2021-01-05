@@ -2,36 +2,34 @@
 label: Blog post
 hide_body: false
 fields:
-  - name: title
-    type: text
-    config:
-      required: false
-    label: title
-  - name: date
-    type: datetime
-    label: date
-    description: ''
-    config:
-      required: true
-      date_format: YYYY-MM-DD
-      time_format: ''
-      display_utc: false
-      export_format: YYYY-MM-DD
-    hidden: false
-    default: now
-  - name: preview
-    type: textarea
-    default: ''
-    config:
-      required: false
-      wysiwyg: false
-      schema:
-        format: markdown
-    label: preview
-  - name: preview_img
-    type: file
-    config:
-      maxSize: 64
-    label: preview_img
-pages:
-  - content/blog/test-blog-post-title-goes-here.md
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: date
+  type: datetime
+  label: date
+  description: ''
+  config:
+    required: true
+    date_format: YYYY-MM-DD
+    time_format: ''
+    display_utc: false
+    export_format: YYYY-MM-DD
+  hidden: false
+  default: now
+- name: preview
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: preview
+- name: preview_img
+  type: file
+  config:
+    maxSize: 64
+  label: preview_img
