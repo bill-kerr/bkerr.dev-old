@@ -1,11 +1,10 @@
 +++
-date = "2021-01-04"
+date = 2021-01-04T05:00:00Z
 preview = "Construction project data is often provided in unwieldy tab sheets. Here's how I transformed it into a valuable, easily consumable digital asset."
-preview_img = "/uploads/tab_sheet.PNG"
+preview_img = "/uploads/digitize-project-data.jpg"
 title = "Digitizing Project Data"
 
 +++
-
 # **Digitizing Project Data**
 
 Construction projects are often provided with project data from the designers in the form of "tab sheets". Tab sheets are a way of organizing data by item of work and location. Due to the fact that a construction project can potentially have thousands of items of work, a set of tab sheets can easily reach 100 pages of content. Searching, filtering, sorting, and aggregating a tab sheet set is painful and often not practical.
