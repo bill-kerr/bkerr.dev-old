@@ -70,7 +70,7 @@ POSTGRES_DB=                  # Database name to use for storing ticket records.
 
 4. OPTIONAL: You may use the prebuilt Docker image hosted on DockerHub at bk7987/ticket-crawler. You must still provide configuration files and a database image. I suggest using your own docker-compose.yml file similar to the following:
 
-```
+```yaml
 version: '3.8'
 
 services:

@@ -38,14 +38,13 @@ Each of these resources is read-only with the exception of Employee. Changes to 
 
 A Job represents a project in HeavyJob. The following is an example of a Job response from the Timecards API:
 
-```
-// Example Job response
+```json
 {
-  id: 'd26e5cc0-e96c-4652-9071-e524024b72a4',
-  jobNumber: '18203',
-  description: 'Example Project Name',
-  createdAt: 1607969066,
-  updatedAt: 1607969066
+  "id": "d26e5cc0-e96c-4652-9071-e524024b72a4",
+  "jobNumber": "18203",
+  "description": "Example Project Name",
+  "createdAt": 1607969066,
+  "updatedAt": 1607969066
 }
 ```
 
@@ -58,24 +57,22 @@ A Job represents a project in HeavyJob. The following is an example of a Job res
 
 An Employee represents a single employee in the Timecard API. The Employee object contains general information about a person, including their base pay class.
 
-```
-// GET /api/v1/employees/:id
+```json
 {
-  id: 'd26e5cc0-e96c-4652-9071-e524024b72a4',
-  name: 'John Doe',
-  isForeman: true,
-  payClassCode: 'LAB',
-  payClassDescription: 'Laborer',
-  payClassId: 'LA',
-  createdAt: 1607969066,
-  updatedAt: 1607969066
+  "id": "d26e5cc0-e96c-4652-9071-e524024b72a4",
+  "name": "John Doe",
+  "isForeman": true,
+  "payClassCode": "LAB",
+  "payClassDescription": "Laborer",
+  "payClassId": "LA",
+  "createdAt": 1607969066,
+  "updatedAt": 1607969066
 }
 ```
 
-```
-// PUT /api/v1/employees/:id
+```json
 {
-  isForeman: false
+  "isForeman": false
 }
 ```
 
@@ -89,20 +86,19 @@ An Employee represents a single employee in the Timecard API. The Employee objec
 
 An Equipment object contains information identifying a single piece of equipment in the Timecards API.
 
-```
-// GET /api/v1/equipment/:id
+```json
 {
-  id: 'd26e5cc0-e96c-4652-9071-e524024b72a4',
-  code: 'E-1422',
-  description: 'Volvo 235ECR Excavator',
-  isRental: false,
-  make: 'Volvo',
-  model: '235ECR',
-  serialNumber: '54sdfs65464',
-  year: 2011,
-  operatorPayClass: 'OG',
-  operatorPayClassDescription: 'Operator Group II',
-  equipmentType: 'Excavator'
+  "id": "d26e5cc0-e96c-4652-9071-e524024b72a4",
+  "code": "E-1422",
+  "description": "Volvo 235ECR Excavator",
+  "isRental": false,
+  "make": "Volvo",
+  "model": "235ECR",
+  "serialNumber": "54sdfs65464",
+  "year": 2011,
+  "operatorPayClass": "OG",
+  "operatorPayClassDescription": "Operator Group II",
+  "equipmentType": "Excavator"
 }
 ```
 
@@ -116,23 +112,22 @@ An Equipment object contains information identifying a single piece of equipment
 
 Timecards represent the core resource of the Timecards API. They contain labor and equipment data for a single day of work.
 
-```
-// GET /api/v1/timecards/:id
+```json
 {
-  id: 'd26e5cc0-e96c-4652-9071-e524024b72a4',
-  jobId: 'd26e5cc0-e96c-4652-9071-e524024b72a4',
-  foremanId: 'd26e5cc0-e96c-4652-9071-e524024b72a4',
-  date: '2020-12-05',
-  revision: 1,
-  isApproved: false,
-  isReviewed: false,
-  isAccepted: false,
-  isRejected: false,
-  sentToPayrollRevision: 1,
-  sentToPayrollDateTime: '2020-12-05',
-  lastModifiedDateTime: '2020-12-05',
-  createdAt: 1607969066,
-  updatedAt: 1607969066
+  "id": "d26e5cc0-e96c-4652-9071-e524024b72a4",
+  "jobId": "d26e5cc0-e96c-4652-9071-e524024b72a4",
+  "foremanId": "d26e5cc0-e96c-4652-9071-e524024b72a4",
+  "date": "2020-12-05",
+  "revision": 1,
+  "isApproved": false,
+  "isReviewed": false,
+  "isAccepted": false,
+  "isRejected": false,
+  "sentToPayrollRevision": 1,
+  "sentToPayrollDateTime": "2020-12-05",
+  "lastModifiedDateTime": "2020-12-05",
+  "createdAt": 1607969066,
+  "updatedAt": 1607969066
 }
 ```
 
@@ -153,19 +148,17 @@ Authentication is handled using JWTs. When users login, they will receive an acc
 | POST /api/v1/auth/login    | Username and password. | A user object. Sets refreshToken cookie.                     |
 | GET /api/v1/auth/refresh   | refreshToken cookie    | UserId, Username, and AccessToken. Sets refreshToken cookie. |
 
-```
-// Register - POST /api/v1/auth/register
+```json
 {
-  username: 'billk',
-  password: 'password'
+  "username": "billk",
+  "password": "password"
 }
 ```
 
-```
-// Login - POST /api/v1/auth/login
+```json
 {
-  username: 'billk',
-  password: 'password'
+  "username": "billk",
+  "password": "password"
 }
 ```
 

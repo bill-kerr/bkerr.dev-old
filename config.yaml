@@ -4,3 +4,4 @@ title: Bill Kerr - Software Developer
 disableKinds:
   - taxonomy
   - term
+pygmentsCodeFences: true

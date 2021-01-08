@@ -87,7 +87,11 @@
 }
 
 .markdown pre {
-  @apply my-3 p-2 rounded-lg text-sm bg-blue-900 text-white font-mono overflow-x-auto;
+  @apply my-3 p-2 rounded-lg text-sm bg-gray-800 text-white font-mono overflow-x-auto;
+}
+
+.markdown p > code {
+  @apply px-1 py-0.5 rounded text-sm bg-gray-200 font-mono;
 }
 
 .markdown ul {
