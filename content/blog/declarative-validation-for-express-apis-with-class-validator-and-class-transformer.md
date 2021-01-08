@@ -1,6 +1,5 @@
 +++
 date = 2021-01-08T00:00:00Z
-draft = true
 preview = "It's important to provide consistent and informative validation errors to API consumers. Here's how I do it declaratively with class-validator and class-transformer."
 preview_img = "/uploads/data-validation.jpg"
 title = "Declarative Validation for Express APIs with Class-Validator and Class-Transformer"
@@ -45,10 +44,11 @@ With these goals in mind, I ended up with a desired error response like this:
 
 As you can see, two errors occurred on the `name` property and both were returned. Additionally, the erroneous property `invalid-property` also threw and error. Now that I knew how I wanted my errors to look, how do I implement it?
 
-## Defining Validation Schema
+### Defining Validation Schema
 
 The power of class-validator shines in its declarative approach to validation. You define rules on your domain objects and class-validator more or less does the rest. Here's a stripped down example from my API:
 
+    // domain / project / project.entity.ts
     // The 'validation' object contains my error message generating functions.
     
     export class Project extends ApiObject {
@@ -84,6 +84,8 @@ While the above schema will throw errors when the rules defined by the property 
 
 To address this problem, class-validator includes the concept of "groups". Each decorator can be assigned to an array of groups, letting class-validator know to ignore the decorator if the current group is not active. So, to define these groups, I created a static `Groups` class:
 
+    // domain / groups.ts
+    
     export class Groups {
       public static readonly READ = 'read';
       public static readonly CREATE = 'create';
@@ -96,6 +98,8 @@ To address this problem, class-validator includes the concept of "groups". Each 
 
 Now, armed with the new `Groups` class, we can add these to the decorators to define the context under which they should be run. Our `Project` class now looks like this:
 
+    // domain / project / project.entity.ts
+    
     @Exclude()
     export class Project extends ApiObject {
       object = 'project'; // this property is exposed in the parent (ApiObject) class
@@ -153,6 +157,8 @@ Now that we have a well-defined validation and transformation schema, how do we 
 
 We can now run validation in a middleware, and pass in the groups we want to be "active" for any particular route. Here's the definition for the middleware that validates the request body. The same pattern can be repeated for query or URL parameters.
 
+    // middleware / validateBody.ts
+    
     export function validateBody<T>(targetClass: ClassType<T>, groups: string[] = []) {
       return async (req: Request, _res: Response, next: NextFunction) => {
         const errors = await validate(req.body, {
@@ -168,15 +174,61 @@ We can now run validation in a middleware, and pass in the groups we want to be 
       };
     }
 
-There is a **significant problem** with the code above. The call to `validate()` will not work because class-validator will not recognize `req.body` as an instance of the `Project` class. You might ask why we can't just do the class transformation before the validation. We can't do that because the transformation will add properties that we do not want while validating the object. Therefore, the validation must come first. In order to trick class-validator into thinking ```req.body``` is an instance of the ```Project``` class, we add the following line before the ```validate()``` call:
+There is a **significant problem** with the code above. The call to `validate()` will not work because class-validator will not recognize `req.body` as an instance of the `Project` class. You might ask why we can't just do the class transformation before the validation. We can't do that because the transformation will add properties that we do not want while validating the object. Therefore, the validation must come first. In order to trick class-validator into thinking `req.body` is an instance of the `Project` class, we add the following line before the `validate()` call:
 
     req.body = Object.setPrototypeOf(req.body, targetClass.prototype)
 
-Now the ```validate()``` call thinks it's evaluating an instance of the ```Project``` class.
+Now the `validate()` call thinks it's evaluating an instance of the `Project` class.
 
-Here's a look at part of a single route in the project controller:
+Implementing this in the controller is easy: we just add the `validateBody` middleware and pass in a target class and the groups we want applied. Here's a look at the create route in the project controller:
 
     projectRouter.post('/', validateBody(Project, [Groups.CREATE]), async (req, res) => {
       const project = await createProject({ user: req.user, resource: req.body });
       return res.status(201).json(project);
     });
+
+There is, as you might have guessed, another problem we haven't addressed yet.
+
+### Wrapping the Response
+
+So far, we've successfully validated a request body, created a project in our API, and are now ready to return the new project object. However, we might not want to send back every field in our `Project` schema. What if we were creating a User object that had password information on it? Can we exclude properties in the response as well?
+
+Thankfully, class-transformer has a `classToPlain()` method that allows us to do just this. So do we need to call `classToPlain()` in every route handler? No, we don't. Let's wrap Express' `send()` method instead.
+
+If you're using TypeScript (which you should be!), you can extend Express' types by adding a "@types" folder. Then, under that, add an "express" folder and finally an `index.d.ts` file (@types -> express -> index.d.ts). Inside the file, add the following code:
+
+    // @types / express / index.d.ts
+    
+    declare global {
+      namespace Express {
+        interface Response {
+          sendRes: <T>(body: T) => void;
+        }
+      }
+    }
+
+Now we can attach `sendRes()` to the response object in a middleware:
+
+    export function responseWrapper(_req: Request, res: Response, next: NextFunction) {
+      res.sendRes = <T>(body: T | T[], groups: string[] = [Groups.READ]) => {
+        res.json(transform(body, groups));
+      };
+      next();
+    }
+    
+    function transform<T>(body: T | T[], groups: string[]) {
+      return Array.isArray(body)
+        ? {
+            object: 'list',
+            data: body.map(item => classToPlain(item, { groups, excludeExtraneousValues: true })),
+          }
+        : classToPlain(body, { groups, excludeExtraneousValues: true });
+    }
+
+Notice we transform the object differently if it is an array. We can add properties, pagination, etc.
+
+### Conclusion
+
+There are many ways to implement validation, but I've slowly arrived at the approach shown in this article through many iterations of different styles of validation. Perhaps the greatest advantage of this approach is that **we only need to define one entity**. No data transfer objects, no mappers, no extra entities floating around in your code. There is one source of truth for validation, transformation/serialization, and (unaddressed in this article) database interaction.
+
+Let me know what you think! How do you approach validation in your APIs? 
