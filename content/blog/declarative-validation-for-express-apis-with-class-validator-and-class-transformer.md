@@ -45,7 +45,7 @@ With these goals in mind, I ended up with a desired error response like this:
 }
 ```
 
-As you can see, two errors occurred on the `name` property and both were returned. Additionally, the erroneous property `invalid-property` also threw and error. Now that I knew how I wanted my errors to look, how do I implement it?
+As you can see, two errors occurred on the `name` property and both were returned. Additionally, the erroneous property `invalid-property` also threw an error. Now that I knew how I wanted my errors to look, how did I implement it?
 
 ### Defining Validation Schema
 
