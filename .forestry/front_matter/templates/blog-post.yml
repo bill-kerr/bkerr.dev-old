@@ -33,3 +33,5 @@ fields:
   config:
     maxSize: 64
   label: preview_img
+pages:
+- content/blog/declarative-validation-for-express-apis-with-class-validator-and-class-transformer.md
