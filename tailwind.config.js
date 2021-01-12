@@ -37,6 +37,7 @@ module.exports = {
       },
       maxWidth: {
         '60ch': '60ch',
+        '70ch': '70ch',
       },
     },
   },

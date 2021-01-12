@@ -14,7 +14,7 @@
 }
 
 .markdown {
-  @apply text-gray-700 max-w-60ch;
+  @apply text-gray-700 max-w-70ch;
 }
 
 .markdown a {
