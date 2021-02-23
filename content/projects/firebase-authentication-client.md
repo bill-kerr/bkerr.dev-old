@@ -1,6 +1,6 @@
 +++
 description = "Simple Firebase authentication client for testing APIs and more."
-github = "https://github.com/bk7987/firebase-auth-client"
+github = "https://github.com/bill-kerr/firebase-auth-client"
 preview_img = "/uploads/firebase_auth_client_preview.png"
 tags = ["Firebase", "Svelte", "TypeScript", "TailwindCSS"]
 title = "Firebase Authentication Client"
